@@ -67,7 +67,7 @@ with st.expander('Input feats'):
 encode = ['island', 'sex']
 df_penguins = pd.get_dummies(input_penguins, prefix=encode)
 
-x = df_penduins[1:]
+x = df_penguins[1:]
 input_row = df_penguins[:1]
 
 target_mapper = {'Adelie':0, 'Chinstrap':1, 'Centoo':2}
