@@ -70,10 +70,9 @@ df_penguins = pd.get_dummies(input_penguins, prefix=encode)
 x = df_penguins[1:]
 input_row = df_penguins[:1]
 
-target_mapper = {'Adelie':0, 'Chinstrap':1, 'Centoo':2}
+target_mapper = {'Adelie':0, 'Gentoo':2, 'Chinstrap':1}
 def target_encode(val):
-    return target_mapper[val]
-    
+  return target_mapper[val]
 y = y_row.apply(target_encode)
 
 with st.expander('Data preparation'):
