@@ -17,3 +17,14 @@ with st.expander('Date'):
     st.write('y')
     y_row = df.species
     st.dataframe(y_row)
+
+with st.sidebar:
+    st.header("Введите признаки: ")
+    island = st.selectbox("Island", ('Torgersen', 'Dream', 'Biscore'))
+    bill_length_mn = st.slider('Bill length (mn)', 32.1, 59.6, 44.5)
+    bill_depth_mn = st.slider('Bill depth (mn)', 13.1, 21.5, 17.3)
+    flipper_length_mn = st.slider('flipper length (mn)', 32.1, 59.6, 44.5)
+    body_mass_g = st.slider('Body mass (g)',  32.1, 59.6, 44.5)
+    gender = st.selectbox('Gender', ('female', 'male'))
+
+
