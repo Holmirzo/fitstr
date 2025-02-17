@@ -2,6 +2,7 @@ import streamlit as st
 import numpy as np
 import time
 import pandas as pd
+import plotly.express as ex
 
 st.title('My first webste')
 
@@ -26,5 +27,19 @@ with st.sidebar:
     flipper_length_mn = st.slider('flipper length (mn)', 32.1, 59.6, 44.5)
     body_mass_g = st.slider('Body mass (g)',  32.1, 59.6, 44.5)
     gender = st.selectbox('Gender', ('female', 'male'))
+
+st.subheader('Data Vis')
+fig = px.scatter(
+    df,
+    x = 'bill_length_mn',
+    y = 'bill_depth_mn',
+    color = 'island'
+    title = 'Bill length vs. Bill Depth by Island'
+)
+
+st.plotly_chart(fig)
+
+
+
 
 
