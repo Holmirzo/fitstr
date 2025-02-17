@@ -28,25 +28,26 @@ with st.sidebar:
     body_mass_g = st.slider('Body mass (g)',  32.1, 59.6, 44.5)
     gender = st.selectbox('Gender', ('female', 'male'))
 
-st.subheader('Data Vis')
+st.subheader('Data Visualization')
 fig = px.scatter(
     df,
-    x = 'bill_length_mn',
-    y = 'bill_depth_mn',
-    color = 'island',
-    title = 'Bill length vs. Bill Depth by Island'
+    x='bill_length_mm',
+    y='bill_depth_mm',
+    color='island',
+    title='Bill Length vs. Bill Depth by Island'
 )
-
 st.plotly_chart(fig)
 
 fig2 = px.histogram(
-    df,
-    x = 'body_mass_g',
+    df, 
+    x='body_mass_g', 
     nbins=30, 
-    title = 'Distribution of Body Mass'
+    title='Distribution of Body Mass'
 )
-
 st.plotly_chart(fig2)
+
+
+
 
 
 
