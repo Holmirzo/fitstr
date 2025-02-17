@@ -1,26 +1,19 @@
 import streamlit as st
 import numpy as np
 import time
+import pandas as pd
 
-# Заголовок приложения
-st.title("Интерактивная анимация в Streamlit")
+st.title('My first webste')
 
-# Кнопка запуска анимации
-if st.button("Запустить анимацию"):
-    progress_bar = st.progress(0)
-    status_text = st.empty()
-    
-    fig, ax = plt.subplots()
-    x = np.linspace(0, 2*np.pi, 100)
-    
-    for i in range(100):
-        y = np.sin(x + i * 0.1)
-        ax.clear()
-        ax.plot(x, y, color='royalblue')
-        ax.set_ylim([-1, 1])
-        st.pyplot(fig)
-        progress_bar.progress(i + 1)
-        status_text.text(f"Процесс: {i+1}%")
-        time.sleep(0.05)
-    
-    st.success("Анимация завершена!")
+st.write('Тут  я задеплою модель')
+
+df = pd.read_csv("https://raw.githubusercontent.com/dataprofessor/data/master/penguins_cleaned.csv")
+
+with st.expander('Date'):
+    st.write('X')
+    X_row = df.drop('species', axis=1)
+    st.dataframe(X_row)
+
+    st.write('y')
+    y_row = df.species
+    st.dataframe(y_row)
