@@ -2,7 +2,7 @@ import streamlit as st
 import numpy as np
 import time
 import pandas as pd
-import plotly.express as ex
+import plotly.express as px
 
 st.title('My first webste')
 
